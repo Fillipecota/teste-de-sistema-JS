@@ -1,0 +1,47 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "author": {
+        "name": "Alice Silva",
+        "role": "Desenvolvedora Front-end",
+        "avatarUrl": "https://github.com/benedettmanu.png"
+      },
+      "publishedAt": "2025-03-18T12:00:00Z",
+      "content": "Hoje compartilhei algumas dicas sobre React no meu blog! Falei sobre como utilizar hooks personalizados para gerenciar estado de forma eficiente e evitar repetições de código. Também mencionei a importância da organização dos componentes e como utilizar o Context API para melhorar a comunicação entre eles. Confira o post completo no meu site!",
+      "comments": [
+        {
+          "id": "0360a3b0-f15c-4372-87ce-d9de05f9ff1c",
+          "comment": "oi",
+          "publishedAt": "2025-03-26T00:50:34.902Z",
+          "like": 1,
+          "author": {
+            "name": "Fellipe Sant Anna Cota",
+            "role": "Metarlugico",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/170477610?v=4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "author": {
+        "name": "Carlos Souza",
+        "role": "Engenheiro de Software",
+        "avatarUrl": "https://github.com/marcuss83.png"
+      },
+      "publishedAt": "2025-03-17T15:30:00Z",
+      "content": "Trabalhando em um projeto incrível com NestJS e WebSockets. Estou desenvolvendo um sistema de notificações em tempo real para uma plataforma de colaboração, onde os usuários recebem atualizações instantâneas sobre novas mensagens, tarefas concluídas e menções em comentários. O uso de WebSockets tem sido essencial para garantir uma experiência fluida e eficiente."
+    },
+    {
+      "id": "3",
+      "author": {
+        "name": "Mariana Oliveira",
+        "role": "UX Designer",
+        "avatarUrl": "https://github.com/niipvargas.png"
+      },
+      "publishedAt": "2025-03-16T10:15:00Z",
+      "content": "Design de interfaces pensando na acessibilidade é essencial! Recentemente, realizei uma pesquisa sobre como melhorar a experiência de navegação para pessoas com deficiência visual e auditiva. Implementamos melhorias como contraste adequado, suporte a leitores de tela e navegação por teclado. Pequenas mudanças podem fazer uma grande diferença na inclusão digital!"
+    }
+  ]
+}
