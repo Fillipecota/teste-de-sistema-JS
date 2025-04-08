@@ -1,22 +1,23 @@
-import { render, screen } from "@testing-library/react"
+import { render, screen } from '@testing-library/react'
 import Avatar from "."
 
-describe('Component Avatar', () => {
-    it('deve redenrizar o componente de avatar sem borda.', () => {
+describe('Componente Avatar', () => {
+    it('Deve redenrizar o componente de avatar sem borda.', () => {
         render(<Avatar src="teste" />)
 
-        const avatarElement = screen.getAllByTestId('avatar')
+        const avatarElement = screen.getByTestId('avatar');
 
-        expect(avatarElement).toBeInTheDocument()
-        expect(avatarElement).toHaveClass('avatar-without-border')
+        expect(avatarElement).toBeInTheDocument();
+        expect(avatarElement).toHaveClass("avatar-without-border")
     })
 
-    it('deve redenrizar o componente de avatar sem borda.', () => {
+    it('Deve redenrizar o componente de avatar com borda.', () => {
         render(<Avatar src="teste" hasBorder={true} />)
 
-        const avatarElement = screen.getAllByTestId('avatar')
+        const avatarElement = screen.getByTestId('avatar');
 
-        expect(avatarElement).toBeInTheDocument()
-        expect(avatarElement).toHaveClass('avatar')
+        expect(avatarElement).toBeInTheDocument();
+        expect(avatarElement).toHaveClass("avatar")
     })
+
 })
