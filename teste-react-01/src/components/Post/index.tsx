@@ -106,7 +106,7 @@ export default function Post({ post, setPost }: postProps) {
     })
 
     return (
-        <article className="post">
+        <article className="post" data-testid="post-test">
             <header>
                 <div className=" author">
                     <Avatar src={post.author.avatarUrl} hasBorder />
@@ -133,7 +133,7 @@ export default function Post({ post, setPost }: postProps) {
                     title="Deixe um comentario" />
 
                 <footer>
-                    < ButtonCustom />
+                    < ButtonCustom text='Publicar' handle={() => { }}/>
                 </footer>
             </form>
 

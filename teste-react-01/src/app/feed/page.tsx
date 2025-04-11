@@ -13,30 +13,11 @@ import TextareaCustom from '@/components/TextareaCustom'
 import ButtonCustom from '@/components/ButtonCustom'
 import { strict } from 'assert'
 
-// type Author = {
-//     name: string;
-//     role: string;
-//     avatarUrl: string;
-// }
-
-// type comment = {
-//     id:string;
-//     author: Author;
-//     publishedAt: Date;
-//     content:string;
-//     comments:comment[];
-// }
-
-// type Post = {
-//     id: number;
-//     author: Author;
-//     publishedAt: Date;
-//     content: string;
-// }
 
 export default function Feed() {
     const [posts, setPosts] = useState<any[]>([]);
     const [content, setContent] = useState<string>('');
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         loadPost();
@@ -44,11 +25,19 @@ export default function Feed() {
 
 
     async function loadPost() {
-        const response = await axios.get('http://localhost:3001/posts');
-        const postSort = response.data.sort((a: any, b: any) => (
-            new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-        ))
-        setPosts(postSort)
+        try {
+
+            setIsLoading(true);
+            const response = await axios.get('http://localhost:3001/posts');
+            const postSort = response.data.sort((a: any, b: any) => (
+                new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+            ))
+            setPosts(postSort)
+        } catch (e) {
+            alert('ERROOU')
+        } finally {
+            setIsLoading(false);
+        }
 
         // const response = await axios.get('http://localhost:3001/posts', {
         //     params: {
@@ -60,7 +49,7 @@ export default function Feed() {
     }
 
     async function handleCreatePost(event: FormEvent) {
-    event.preventDefault()
+        event.preventDefault()
 
         const post = {
             id: String(posts.length + 1),
@@ -104,12 +93,16 @@ export default function Feed() {
                             title='O que voce esta pensando?'
                         />
 
-                        <ButtonCustom/>
+                        <ButtonCustom text='publicar' handle={() => { }} />
 
                     </form>
-                    {posts.map(item => (
-                        <Post post={item} key={item.id} setPost={setPosts} />
-                    ))}
+                    {isLoading ? (
+                        <h1>Carregando...</h1>
+                    ) : (
+                        posts.map(item => (
+                            <Post post={item} key={item.id} setPost={setPosts} />
+                        ))
+                    )}
                 </main>
             </div>
         </div>

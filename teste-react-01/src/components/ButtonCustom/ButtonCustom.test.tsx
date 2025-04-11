@@ -31,5 +31,4 @@ describe('Test Button Custom', () => {
         expect(handleMock).toHaveBeenCalled();
         expect(handleMock).toHaveBeenCalledTimes(1);
     })
-
 })

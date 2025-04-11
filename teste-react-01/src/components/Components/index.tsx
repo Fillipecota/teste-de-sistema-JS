@@ -41,7 +41,7 @@ export default function Comment({ comment, handleDelete, handleLike }: CommentPr
                             <time>{dateFormat}</time>
                         </div>
 
-                        <button title="Deletar Comentário" onClick={(event) => handleDelete(event, comment.id)} data-testid="button-deletar">
+                        <button title="Deletar Comentário" onClick={(event) => handleDelete(event, comment.id)}  data-testid={"button-delete"}>
                             <MdOutlineDeleteForever size={24} />
                         </button>
 
@@ -49,7 +49,7 @@ export default function Comment({ comment, handleDelete, handleLike }: CommentPr
                     <p> {comment.comment}</p>
                 </div>
                 <footer>
-                    <button onClick={(event) => handleLike(event, comment.id)}>
+                    <button onClick={(event) => handleLike(event, comment.id)} data-testid="button-like">
                         <FaRegThumbsUp />
                         curti <span>{comment.like}</span>
                     </button>
